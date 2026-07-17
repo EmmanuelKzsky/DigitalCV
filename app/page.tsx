@@ -13,7 +13,7 @@ import {
   ShieldCheck,
   Sparkles,
 } from "lucide-react";
-import { FaAws, FaGithub, FaJava, FaUsersCog } from "react-icons/fa";
+import { FaAws, FaJava, FaUsersCog } from "react-icons/fa";
 import {
   SiAngular,
   SiAnthropic,
@@ -291,6 +291,10 @@ const capabilities = [
   },
 ];
 
+const technologyExperience: Record<string, string> = {
+  "React": "11+ years of experience · since 2015", "Next.js": "1+ year of experience · since 2025", "Vue": "2+ years of experience · since 2024", "Angular": "12+ years of experience · since 2014", "TypeScript": "9+ years of experience · since 2017", "Tailwind": "2+ years of experience · since 2024", "AWS": "1+ year of experience · since 2025", "Google Cloud": "8+ years of experience · since 2018", "Kubernetes": "3+ years of experience · since 2023", "Docker": "9+ years of experience · since 2017", "Helm": "1+ year of experience · since 2025", "CircleCI": "1+ year of experience · since 2025", "ArgoCD": "1+ year of experience · since 2025", "Jenkins": "3+ years of experience · since 2023", "NestJS": "1+ year of experience · since 2025", "Node.js": "12+ years of experience · since 2014", "Java": "12+ years of experience · since 2014", "OpenJDK": "8+ years of experience · since 2018", "Spring": "2+ years of experience · since 2024", "Rails": "2+ years of experience · since 2024", "Python": "Production experience", "PostgreSQL": "Production experience", "MongoDB": "2+ years of experience · since 2024", "Prisma": "1+ year of experience · since 2025", "Jest": "8+ years of experience · since 2018", "Cypress": "8+ years of experience · since 2018", "SonarQube": "8+ years of experience · since 2018", "Checkmarx": "1+ year of experience · since 2025", "Splunk": "1+ year of experience · since 2025", "New Relic": "1+ year of experience · since 2025", "Datadog": "2+ years of experience · since 2024", "Sentry": "3+ years of experience · since 2023", "Opsgenie": "1+ year of experience · since 2025", "Claude": "1+ year of experience · since 2025", "Anthropic": "1+ year of experience · since 2025", "Cursor": "1+ year of experience · since 2025", "Windsurf": "1+ year of experience · since 2025", "AWS Bedrock": "1+ year of experience · since 2025", "Mastra AI": "1+ year of experience · since 2025", "Architecture": "9+ years of experience · since 2017", "Engineering": "12+ years of experience · since 2014", "Mentoring": "9+ years of experience · since 2017", "Quality": "8+ years of experience · since 2018", "Data": "12+ years of experience · since 2014", "Innovation": "9+ years of experience · since 2017",
+};
+
 const companies = [
   { name: "Wizeline", logo: "/company-wizeline.png" },
   { name: "Deloitte", logo: "/company-deloitte.png" },
@@ -321,6 +325,9 @@ export default function Home() {
             </Button>
             <Button nativeButton={false} render={<a href="/export" />} variant="ghost" size="sm" className="hidden text-zinc-300 hover:bg-white/10 hover:text-white sm:inline-flex">
               Export this
+            </Button>
+            <Button nativeButton={false} render={<a href="/github" />} variant="ghost" size="sm" className="hidden text-zinc-300 hover:bg-white/10 hover:text-white sm:inline-flex">
+              My GitHub
             </Button>
             <Button nativeButton={false} render={<a href="mailto:Emmanuel.castro.pantoja@gmail.com" />} size="sm" className="rounded-full bg-emerald-400 px-4 text-[#07110f] hover:bg-emerald-300">
               Let&apos;s talk <ArrowUpRight className="size-4" />
@@ -443,7 +450,7 @@ export default function Home() {
                         {item.tools.map((tool) => (
                           <div
                             key={tool.name}
-                            title={tool.name}
+                            title={`${tool.name} — ${technologyExperience[tool.name] ?? "Production experience"}`}
                             className="flex min-h-14 flex-col items-center justify-center gap-1.5 rounded-lg border border-black/7 bg-[#f7f7f3] px-1.5 py-2 text-center transition-colors group-hover:bg-white"
                           >
                             <tool.icon className="size-5" aria-hidden="true" style={{ color: tool.color }} />
@@ -555,19 +562,6 @@ export default function Home() {
             </a>
             <span className="flex items-center gap-2"><MapPin className="size-4" /> Guadalajara, Jalisco, México</span>
           </div>
-        </div>
-      </section>
-
-      <section className="bg-white px-5 py-16 sm:px-8">
-        <div className="mx-auto flex max-w-7xl flex-col gap-6 rounded-3xl border border-black/10 bg-[#f3f1ea] p-7 sm:flex-row sm:items-center sm:justify-between sm:p-10">
-          <div>
-            <p className="section-kicker">Open source</p>
-            <h2 className="mt-3 text-3xl font-semibold tracking-tight text-[#0a1714]">Do you want to use this project for your CV?</h2>
-            <p className="mt-2 max-w-2xl text-zinc-600">Fork the codebase, make it your own and export your own résumé from the portfolio.</p>
-          </div>
-          <Button nativeButton={false} render={<a href="https://github.com/EmmanuelKzsky/DigitalCV" target="_blank" rel="noreferrer" />} size="lg" className="shrink-0 rounded-full bg-[#0a1714] px-6 text-white hover:bg-[#17342c]">
-            <FaGithub className="size-5" /> Use on GitHub <ArrowUpRight className="size-4" />
-          </Button>
         </div>
       </section>
 
