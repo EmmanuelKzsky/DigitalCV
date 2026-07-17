@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/hero-uml-software.png",
+        url: "/hero-uml-software-v2.png",
         width: 1717,
         height: 916,
         alt: "Software architecture visualization for Emmanuel Castro's portfolio",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     title: "Emmanuel Castro — Lead Fullstack Engineer",
     description:
       "12+ years turning ambitious ideas into production-ready software.",
-    images: ["/hero-uml-software.png"],
+    images: ["/hero-uml-software-v2.png"],
   },
 };
 

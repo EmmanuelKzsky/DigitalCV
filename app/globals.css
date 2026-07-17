@@ -61,8 +61,8 @@
   --secondary-foreground: oklch(0.205 0 0);
   --muted: oklch(0.97 0 0);
   --muted-foreground: oklch(0.556 0 0);
-  --accent: #fee2e2;
-  --accent-foreground: #991b1b;
+  --accent: #dbeafe;
+  --accent-foreground: #1d4ed8;
   --destructive: oklch(0.577 0.245 27.325);
   --border: oklch(0.922 0 0);
   --input: oklch(0.922 0 0);
@@ -132,7 +132,7 @@
 }
 
 ::selection {
-  background: #f87171;
+  background: #60a5fa;
   color: #09090b;
 }
 
@@ -145,7 +145,7 @@
 }
 
 .hero-glow {
-  background: radial-gradient(circle, rgba(248, 113, 113, 0.2) 0%, rgba(248, 113, 113, 0.04) 46%, transparent 72%);
+  background: radial-gradient(circle, rgba(96, 165, 250, 0.22) 0%, rgba(96, 165, 250, 0.04) 46%, transparent 72%);
   filter: blur(12px);
 }
 
@@ -219,42 +219,42 @@
 
 .text-emerald-300,
 .text-emerald-400 {
-  color: #fca5a5 !important;
+  color: #93c5fd !important;
 }
 
 .text-emerald-700,
 .text-emerald-800 {
-  color: #b91c1c !important;
+  color: #2563eb !important;
 }
 
 .text-emerald-950 {
-  color: #450a0a !important;
+  color: #172554 !important;
 }
 
 .bg-emerald-100,
 .bg-emerald-400\/10 {
-  background-color: #fee2e2 !important;
+  background-color: #dbeafe !important;
 }
 
 .bg-emerald-300,
 .bg-emerald-400,
 .bg-emerald-500 {
-  background-color: #f87171 !important;
+  background-color: #60a5fa !important;
 }
 
 .hover\:bg-emerald-300:hover,
 .hover\:bg-emerald-400:hover,
 .hover\:bg-emerald-500:hover {
-  background-color: #fca5a5 !important;
+  background-color: #93c5fd !important;
 }
 
 .border-emerald-400\/25,
 .hover\:border-emerald-500\/45 {
-  border-color: rgb(248 113 113 / 0.45) !important;
+  border-color: rgb(96 165 250 / 0.45) !important;
 }
 
 .focus\:ring-emerald-500\/40 {
-  --tw-ring-color: rgb(248 113 113 / 0.4) !important;
+  --tw-ring-color: rgb(96 165 250 / 0.4) !important;
 }
 
 .bg-\[\#f3f1ea\] {
@@ -291,7 +291,11 @@
   font-weight: 600;
   letter-spacing: 0.24em;
   text-transform: uppercase;
-  color: #b91c1c;
+  color: #2563eb;
+}
+
+main > nav:not(.sticky):has(a[href="/export"]) {
+  display: none;
 }
 
 .contact-orbit::before,
@@ -302,9 +306,6 @@
   border: 1px solid rgb(7 17 15 / 0.12);
 }
 
-main > nav:has(a[href="/export"]) {
-  display: none;
-}
 
 .contact-orbit::before {
   inset: 4rem;

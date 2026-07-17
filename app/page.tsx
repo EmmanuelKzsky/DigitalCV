@@ -67,6 +67,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
+import { TechnologyTooltip } from "@/components/technology-tooltip";
 
 const experience = [
   {
@@ -339,7 +340,7 @@ export default function Home() {
       <section id="top" className="relative overflow-hidden bg-[#07110f] text-white">
         <div className="absolute inset-y-0 right-0 w-full lg:w-[72%]" aria-hidden="true">
           <Image
-            src="/hero-uml-software.png"
+            src="/hero-uml-software-v2.png"
             alt=""
             fill
             priority
@@ -450,16 +451,12 @@ export default function Home() {
                       <CardDescription className="sr-only">Technologies and capabilities used in {item.title}</CardDescription>
                       <div className="mt-4 flex w-max gap-2 overflow-visible">
                         {item.tools.map((tool) => (
-                          <div
-                            key={tool.name}
-                            className="group/technology relative z-0 flex min-h-16 w-[4.75rem] shrink-0 flex-col items-center justify-center gap-1.5 rounded-lg border border-black/7 bg-[#f7f7f3] px-1.5 py-2 text-center transition-colors group-hover:bg-white hover:z-50"
-                          >
-                            <tool.icon className="size-5" aria-hidden="true" style={{ color: tool.color }} />
-                            <span className="text-[9px] font-medium leading-tight text-zinc-600">{tool.name}</span>
-                            <span role="tooltip" className="pointer-events-none absolute bottom-full left-1/2 z-40 mb-2 w-max max-w-44 -translate-x-1/2 rounded-lg bg-[#07110f] px-2.5 py-1.5 text-center text-[10px] font-medium leading-4 text-white opacity-0 shadow-lg transition-opacity duration-150 group-hover/technology:opacity-100 group-focus-within/technology:opacity-100">
-                              {technologyExperience[tool.name] ?? "Production experience"}
-                            </span>
-                          </div>
+                          <TechnologyTooltip key={tool.name} content={technologyExperience[tool.name] ?? "Production experience"}>
+                            <div className="flex min-h-16 w-[4.75rem] shrink-0 flex-col items-center justify-center gap-1.5 rounded-lg border border-black/7 bg-[#f7f7f3] px-1.5 py-2 text-center transition-colors group-hover:bg-white">
+                              <tool.icon className="size-5" aria-hidden="true" style={{ color: tool.color }} />
+                              <span className="text-[9px] font-medium leading-tight text-zinc-600">{tool.name}</span>
+                            </div>
+                          </TechnologyTooltip>
                         ))}
                       </div>
                     </CardHeader>
