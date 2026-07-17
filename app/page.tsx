@@ -447,11 +447,13 @@ export default function Home() {
                         {item.tools.map((tool) => (
                           <div
                             key={tool.name}
-                            title={`${tool.name} — ${technologyExperience[tool.name] ?? "Production experience"}`}
-                            className="flex min-h-14 flex-col items-center justify-center gap-1.5 rounded-lg border border-black/7 bg-[#f7f7f3] px-1.5 py-2 text-center transition-colors group-hover:bg-white"
+                            className="group/technology relative flex min-h-14 flex-col items-center justify-center gap-1.5 rounded-lg border border-black/7 bg-[#f7f7f3] px-1.5 py-2 text-center transition-colors group-hover:bg-white"
                           >
                             <tool.icon className="size-5" aria-hidden="true" style={{ color: tool.color }} />
                             <span className="text-[9px] font-medium leading-tight text-zinc-600">{tool.name}</span>
+                            <span role="tooltip" className="pointer-events-none absolute bottom-full left-1/2 z-40 mb-2 w-max max-w-44 -translate-x-1/2 rounded-lg bg-[#07110f] px-2.5 py-1.5 text-center text-[10px] font-medium leading-4 text-white opacity-0 shadow-lg transition-opacity duration-150 group-hover/technology:opacity-100 group-focus-within/technology:opacity-100">
+                              {technologyExperience[tool.name] ?? "Production experience"}
+                            </span>
                           </div>
                         ))}
                       </div>
