@@ -437,8 +437,8 @@ export default function Home() {
             {[false, true].map((duplicate) => (
               <div key={String(duplicate)} className="technology-group" aria-hidden={duplicate || undefined} data-duplicate={duplicate || undefined}>
                 {capabilities.map((item, index) => (
-                  <Card key={item.title} className="group relative z-0 w-max min-w-0 shrink-0 rounded-2xl border-black/8 bg-white/75 shadow-none transition-[background-color,box-shadow] duration-300 hover:z-30 hover:bg-white hover:shadow-[0_18px_50px_rgba(9,24,20,0.12)]">
-                    <CardHeader className="!flex !w-max flex-col p-5 sm:p-6">
+                  <Card key={item.title} style={{ width: `${item.tools.length * 4.75 + (item.tools.length - 1) * 0.5 + 3}rem` }} className="group relative z-0 shrink-0 rounded-2xl border-black/8 bg-white/75 shadow-none transition-[background-color,box-shadow] duration-300 hover:z-30 hover:bg-white hover:shadow-[0_18px_50px_rgba(9,24,20,0.12)]">
+                    <CardHeader className="!flex !w-full flex-col p-5 sm:p-6">
                       <div className="mb-3 flex items-center justify-between">
                         <div className="flex items-center gap-3">
                           <div className="flex size-9 items-center justify-center rounded-xl bg-[#0a1714] text-emerald-300">
@@ -541,15 +541,15 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="contact" className="relative overflow-hidden bg-[#0b1120] px-5 py-24 text-white sm:px-8 sm:py-32">
+      <section id="contact" className="relative overflow-hidden bg-[#031113] px-5 py-24 text-white sm:px-8 sm:py-32">
         <div className="contact-orbit absolute right-[-8rem] top-[-10rem] size-[34rem] rounded-full border border-[#07110f]/15" aria-hidden="true" />
         <div className="relative mx-auto max-w-7xl">
-          <p className="font-mono text-xs uppercase tracking-[0.28em] text-blue-300">Start a conversation</p>
+          <p className="font-mono text-xs uppercase tracking-[0.28em] text-cyan-300">Start a conversation</p>
           <div className="mt-5 grid gap-10 lg:grid-cols-[1fr_auto] lg:items-end">
             <h2 className="max-w-4xl text-balance text-5xl font-semibold leading-[0.95] tracking-[-0.055em] sm:text-7xl">
               Let&apos;s build something people enjoy using.
             </h2>
-            <Button nativeButton={false} render={<a href="mailto:Emmanuel.castro.pantoja@gmail.com" />} size="lg" className="h-14 rounded-full bg-blue-400 px-7 text-[#09090b] hover:bg-blue-300">
+            <Button nativeButton={false} render={<a href="mailto:Emmanuel.castro.pantoja@gmail.com" />} size="lg" className="h-14 rounded-full bg-cyan-300 px-7 text-[#02090a] hover:bg-cyan-200">
               Send an email <ArrowUpRight className="size-5" />
             </Button>
           </div>

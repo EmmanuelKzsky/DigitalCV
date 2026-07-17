@@ -49,24 +49,24 @@
 }
 
 :root {
-  --background: #09090b;
-  --foreground: #f8fafc;
-  --card: #111827;
-  --card-foreground: #f8fafc;
-  --popover: #111827;
-  --popover-foreground: #f8fafc;
-  --primary: #f8fafc;
-  --primary-foreground: #09090b;
-  --secondary: #18181b;
-  --secondary-foreground: #f8fafc;
-  --muted: #18181b;
-  --muted-foreground: #a5b4c8;
-  --accent: #1e3a8a;
-  --accent-foreground: #bfdbfe;
+  --background: #02090a;
+  --foreground: #f1fbfc;
+  --card: #071518;
+  --card-foreground: #f1fbfc;
+  --popover: #071518;
+  --popover-foreground: #f1fbfc;
+  --primary: #f1fbfc;
+  --primary-foreground: #02090a;
+  --secondary: #0b2024;
+  --secondary-foreground: #f1fbfc;
+  --muted: #0b2024;
+  --muted-foreground: #9ab8bd;
+  --accent: #004e57;
+  --accent-foreground: #a5f3fc;
   --destructive: oklch(0.577 0.245 27.325);
-  --border: rgb(148 163 184 / 0.2);
-  --input: rgb(148 163 184 / 0.2);
-  --ring: #60a5fa;
+  --border: rgb(34 211 238 / 0.22);
+  --input: rgb(34 211 238 / 0.22);
+  --ring: #22d3ee;
   --chart-1: oklch(0.87 0 0);
   --chart-2: oklch(0.556 0 0);
   --chart-3: oklch(0.439 0 0);
@@ -219,53 +219,53 @@
 
 .text-emerald-300,
 .text-emerald-400 {
-  color: #93c5fd !important;
+  color: #a5f3fc !important;
 }
 
 .text-emerald-700,
 .text-emerald-800 {
-  color: #2563eb !important;
+  color: #22d3ee !important;
 }
 
 .text-emerald-950 {
-  color: #172554 !important;
+  color: #cffafe !important;
 }
 
 .bg-emerald-100,
 .bg-emerald-400\/10 {
-  background-color: rgb(30 58 138 / 0.62) !important;
+  background-color: rgb(8 145 178 / 0.28) !important;
 }
 
 .bg-emerald-100 {
-  background-color: #172554 !important;
+  background-color: #004e57 !important;
 }
 
 .bg-emerald-400,
 .bg-emerald-500 {
-  background-color: #60a5fa !important;
+  background-color: #22d3ee !important;
 }
 
 .bg-emerald-300 {
-  background-color: #1e3a8a !important;
+  background-color: #004e57 !important;
 }
 
 .hover\:bg-emerald-300:hover,
 .hover\:bg-emerald-400:hover,
 .hover\:bg-emerald-500:hover {
-  background-color: #93c5fd !important;
+  background-color: #67e8f9 !important;
 }
 
 .border-emerald-400\/25,
 .hover\:border-emerald-500\/45 {
-  border-color: rgb(96 165 250 / 0.45) !important;
+  border-color: rgb(34 211 238 / 0.45) !important;
 }
 
 .focus\:ring-emerald-500\/40 {
-  --tw-ring-color: rgb(96 165 250 / 0.4) !important;
+  --tw-ring-color: rgb(34 211 238 / 0.4) !important;
 }
 
 .bg-\[\#f3f1ea\] {
-  background-color: #0f172a !important;
+  background-color: #02090a !important;
 }
 
 .bg-\[\#07110f\],
@@ -284,18 +284,18 @@
 .bg-zinc-50,
 .bg-amber-50,
 .bg-\[\#f7f7f3\] {
-  background-color: #111827 !important;
+  background-color: #071518 !important;
 }
 
 .hover\:bg-white:hover,
 .group:hover .group-hover\:bg-white {
-  background-color: #172033 !important;
+  background-color: #0b2024 !important;
 }
 
 .text-zinc-600,
 .text-zinc-500,
 .text-zinc-400 {
-  color: #a5b4c8 !important;
+  color: #9ab8bd !important;
 }
 
 .border-black\/10,
@@ -307,12 +307,12 @@
 }
 
 .bg-zinc-50 {
-  background-color: #172033 !important;
+  background-color: #0b2024 !important;
 }
 
 .text-amber-900,
 .text-red-700 {
-  color: #bfdbfe !important;
+  color: #a5f3fc !important;
 }
 
 .technology-marquee:hover .technology-track {
@@ -335,7 +335,7 @@
   font-weight: 600;
   letter-spacing: 0.24em;
   text-transform: uppercase;
-  color: #2563eb;
+  color: #22d3ee;
 }
 
 main > nav:not(.sticky):has(a[href="/export"]) {

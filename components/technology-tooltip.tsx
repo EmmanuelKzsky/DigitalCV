@@ -10,5 +10,5 @@ export function TechnologyTooltip({ children, content }: { children: ReactNode; 
     const rect = trigger.current?.getBoundingClientRect();
     if (rect) setPosition({ left: rect.left + rect.width / 2, top: rect.top - 10 });
   };
-  return <span ref={trigger} className="relative block" onMouseEnter={show} onMouseLeave={() => setPosition(null)} onFocus={show} onBlur={() => setPosition(null)}>{children}{position && createPortal(<span role="tooltip" style={{ left: position.left, top: position.top }} className="pointer-events-none fixed z-[100] w-max max-w-52 -translate-x-1/2 -translate-y-full rounded-lg bg-[#09090b] px-3 py-2 text-center text-[11px] font-medium leading-4 text-white shadow-2xl">{content}</span>, document.body)}</span>;
+  return <span ref={trigger} className="relative block shrink-0" onMouseEnter={show} onMouseLeave={() => setPosition(null)} onFocus={show} onBlur={() => setPosition(null)}>{children}{position && createPortal(<span role="tooltip" style={{ left: position.left, top: position.top }} className="pointer-events-none fixed z-[100] w-max max-w-52 -translate-x-1/2 -translate-y-full rounded-lg bg-[#09090b] px-3 py-2 text-center text-[11px] font-medium leading-4 text-white shadow-2xl">{content}</span>, document.body)}</span>;
 }
