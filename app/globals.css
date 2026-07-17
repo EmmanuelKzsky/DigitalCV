@@ -246,6 +246,10 @@
   border: 1px solid rgb(7 17 15 / 0.12);
 }
 
+main > nav:has(a[href="/export"]) {
+  display: none;
+}
+
 .contact-orbit::before {
   inset: 4rem;
 }

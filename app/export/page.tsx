@@ -139,10 +139,6 @@ export default function ExportPage() {
 
   return (
     <main className="min-h-screen bg-[#f3f1ea] text-[#0a1714]">
-      <nav className="border-b border-black/10 bg-[#07110f] text-white"><div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 sm:px-8">
-        <a href="/" className="flex items-center gap-2 font-mono text-sm font-semibold tracking-[0.18em]"><ArrowLeft className="size-4" /> EC<span className="text-emerald-400">.</span></a>
-        <a href="/github" className="text-sm text-zinc-300 hover:text-white">My GitHub</a>
-      </div></nav>
       <section className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-24">
         <p className="section-kicker">Export this</p>
         <div className="mt-4 grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-end"><div>

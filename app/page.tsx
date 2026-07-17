@@ -323,9 +323,6 @@ export default function Home() {
             <Button nativeButton={false} render={<a href="#expertise" />} variant="ghost" size="sm" className="hidden text-zinc-300 hover:bg-white/10 hover:text-white sm:inline-flex">
               Expertise
             </Button>
-            <Button nativeButton={false} render={<a href="/export" />} variant="ghost" size="sm" className="hidden text-zinc-300 hover:bg-white/10 hover:text-white sm:inline-flex">
-              Export this
-            </Button>
             <Button nativeButton={false} render={<a href="/github" />} variant="ghost" size="sm" className="hidden text-zinc-300 hover:bg-white/10 hover:text-white sm:inline-flex">
               My GitHub
             </Button>
