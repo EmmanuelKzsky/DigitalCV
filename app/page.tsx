@@ -323,6 +323,9 @@ export default function Home() {
             <Button nativeButton={false} render={<a href="#expertise" />} variant="ghost" size="sm" className="hidden text-zinc-300 hover:bg-white/10 hover:text-white sm:inline-flex">
               Expertise
             </Button>
+            <Button nativeButton={false} render={<a href="/export" />} variant="ghost" size="sm" className="hidden text-zinc-300 hover:bg-white/10 hover:text-white sm:inline-flex">
+              Export this
+            </Button>
             <Button nativeButton={false} render={<a href="/github" />} variant="ghost" size="sm" className="hidden text-zinc-300 hover:bg-white/10 hover:text-white sm:inline-flex">
               My GitHub
             </Button>
@@ -433,21 +436,23 @@ export default function Home() {
             {[false, true].map((duplicate) => (
               <div key={String(duplicate)} className="technology-group" aria-hidden={duplicate || undefined} data-duplicate={duplicate || undefined}>
                 {capabilities.map((item, index) => (
-                  <Card key={item.title} className="group h-[25rem] w-[18rem] shrink-0 rounded-2xl border-black/8 bg-white/75 shadow-none transition-[background-color,box-shadow] duration-300 hover:bg-white hover:shadow-[0_18px_50px_rgba(9,24,20,0.08)] sm:h-[23rem] sm:w-[21rem]">
-                    <CardHeader className="h-full">
+                  <Card key={item.title} className="group relative z-0 w-max min-w-[22rem] shrink-0 rounded-2xl border-black/8 bg-white/75 shadow-none transition-[background-color,box-shadow] duration-300 hover:z-30 hover:bg-white hover:shadow-[0_18px_50px_rgba(9,24,20,0.12)]">
+                    <CardHeader className="p-5 sm:p-6">
                       <div className="mb-3 flex items-center justify-between">
-                        <div className="flex size-9 items-center justify-center rounded-xl bg-[#0a1714] text-emerald-300">
-                          <item.icon className="size-4.5" strokeWidth={1.7} />
+                        <div className="flex items-center gap-3">
+                          <div className="flex size-9 items-center justify-center rounded-xl bg-[#0a1714] text-emerald-300">
+                            <item.icon className="size-4.5" strokeWidth={1.7} />
+                          </div>
+                          <CardTitle className="text-xl tracking-tight text-[#0a1714]">{item.title}</CardTitle>
                         </div>
                         <span className="font-mono text-xs text-zinc-400">0{index + 1}</span>
                       </div>
-                      <CardTitle className="text-xl tracking-tight text-[#0a1714]">{item.title}</CardTitle>
                       <CardDescription className="sr-only">Technologies and capabilities used in {item.title}</CardDescription>
-                      <div className="mt-3 grid grid-cols-3 gap-1.5 sm:grid-cols-4">
+                      <div className="mt-4 flex w-max gap-2 overflow-visible">
                         {item.tools.map((tool) => (
                           <div
                             key={tool.name}
-                            className="group/technology relative flex min-h-14 flex-col items-center justify-center gap-1.5 rounded-lg border border-black/7 bg-[#f7f7f3] px-1.5 py-2 text-center transition-colors group-hover:bg-white"
+                            className="group/technology relative z-0 flex min-h-16 w-[4.75rem] shrink-0 flex-col items-center justify-center gap-1.5 rounded-lg border border-black/7 bg-[#f7f7f3] px-1.5 py-2 text-center transition-colors group-hover:bg-white hover:z-50"
                           >
                             <tool.icon className="size-5" aria-hidden="true" style={{ color: tool.color }} />
                             <span className="text-[9px] font-medium leading-tight text-zinc-600">{tool.name}</span>

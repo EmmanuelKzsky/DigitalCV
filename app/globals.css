@@ -50,19 +50,19 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #0a1714;
+  --foreground: #18181b;
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: #0a1714;
+  --primary: #18181b;
   --primary-foreground: #ffffff;
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
   --muted: oklch(0.97 0 0);
   --muted-foreground: oklch(0.556 0 0);
-  --accent: #d1fae5;
-  --accent-foreground: #064e3b;
+  --accent: #fee2e2;
+  --accent-foreground: #991b1b;
   --destructive: oklch(0.577 0.245 27.325);
   --border: oklch(0.922 0 0);
   --input: oklch(0.922 0 0);
@@ -132,8 +132,8 @@
 }
 
 ::selection {
-  background: #6ee7b7;
-  color: #07110f;
+  background: #f87171;
+  color: #09090b;
 }
 
 .hero-grid {
@@ -145,7 +145,7 @@
 }
 
 .hero-glow {
-  background: radial-gradient(circle, rgba(52, 211, 153, 0.19) 0%, rgba(52, 211, 153, 0.04) 46%, transparent 72%);
+  background: radial-gradient(circle, rgba(248, 113, 113, 0.2) 0%, rgba(248, 113, 113, 0.04) 46%, transparent 72%);
   filter: blur(12px);
 }
 
@@ -195,7 +195,9 @@
 }
 
 .technology-marquee {
-  overflow: hidden;
+  overflow-x: clip;
+  overflow-y: visible;
+  padding-block: 1.25rem;
   mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
 }
 
@@ -213,6 +215,60 @@
   flex-shrink: 0;
   align-items: stretch;
   gap: 1rem;
+}
+
+.text-emerald-300,
+.text-emerald-400 {
+  color: #fca5a5 !important;
+}
+
+.text-emerald-700,
+.text-emerald-800 {
+  color: #b91c1c !important;
+}
+
+.text-emerald-950 {
+  color: #450a0a !important;
+}
+
+.bg-emerald-100,
+.bg-emerald-400\/10 {
+  background-color: #fee2e2 !important;
+}
+
+.bg-emerald-300,
+.bg-emerald-400,
+.bg-emerald-500 {
+  background-color: #f87171 !important;
+}
+
+.hover\:bg-emerald-300:hover,
+.hover\:bg-emerald-400:hover,
+.hover\:bg-emerald-500:hover {
+  background-color: #fca5a5 !important;
+}
+
+.border-emerald-400\/25,
+.hover\:border-emerald-500\/45 {
+  border-color: rgb(248 113 113 / 0.45) !important;
+}
+
+.focus\:ring-emerald-500\/40 {
+  --tw-ring-color: rgb(248 113 113 / 0.4) !important;
+}
+
+.bg-\[\#f3f1ea\] {
+  background-color: #f4f4f5 !important;
+}
+
+.bg-\[\#07110f\],
+.bg-\[\#0a1714\] {
+  background-color: #09090b !important;
+}
+
+.text-\[\#07110f\],
+.text-\[\#0a1714\] {
+  color: #18181b !important;
 }
 
 .technology-marquee:hover .technology-track {
@@ -235,7 +291,7 @@
   font-weight: 600;
   letter-spacing: 0.24em;
   text-transform: uppercase;
-  color: #047857;
+  color: #b91c1c;
 }
 
 .contact-orbit::before,
