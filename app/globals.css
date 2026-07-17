@@ -49,24 +49,24 @@
 }
 
 :root {
-  --background: #ffffff;
-  --foreground: #18181b;
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: #18181b;
-  --primary-foreground: #ffffff;
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: #dbeafe;
-  --accent-foreground: #1d4ed8;
+  --background: #09090b;
+  --foreground: #f8fafc;
+  --card: #111827;
+  --card-foreground: #f8fafc;
+  --popover: #111827;
+  --popover-foreground: #f8fafc;
+  --primary: #f8fafc;
+  --primary-foreground: #09090b;
+  --secondary: #18181b;
+  --secondary-foreground: #f8fafc;
+  --muted: #18181b;
+  --muted-foreground: #a5b4c8;
+  --accent: #1e3a8a;
+  --accent-foreground: #bfdbfe;
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
+  --border: rgb(148 163 184 / 0.2);
+  --input: rgb(148 163 184 / 0.2);
+  --ring: #60a5fa;
   --chart-1: oklch(0.87 0 0);
   --chart-2: oklch(0.556 0 0);
   --chart-3: oklch(0.439 0 0);
@@ -233,13 +233,20 @@
 
 .bg-emerald-100,
 .bg-emerald-400\/10 {
-  background-color: #dbeafe !important;
+  background-color: rgb(30 58 138 / 0.62) !important;
 }
 
-.bg-emerald-300,
+.bg-emerald-100 {
+  background-color: #172554 !important;
+}
+
 .bg-emerald-400,
 .bg-emerald-500 {
   background-color: #60a5fa !important;
+}
+
+.bg-emerald-300 {
+  background-color: #1e3a8a !important;
 }
 
 .hover\:bg-emerald-300:hover,
@@ -258,7 +265,7 @@
 }
 
 .bg-\[\#f3f1ea\] {
-  background-color: #f4f4f5 !important;
+  background-color: #0f172a !important;
 }
 
 .bg-\[\#07110f\],
@@ -268,7 +275,44 @@
 
 .text-\[\#07110f\],
 .text-\[\#0a1714\] {
-  color: #18181b !important;
+  color: #f8fafc !important;
+}
+
+.bg-white,
+.bg-white\/70,
+.bg-white\/75,
+.bg-zinc-50,
+.bg-amber-50,
+.bg-\[\#f7f7f3\] {
+  background-color: #111827 !important;
+}
+
+.hover\:bg-white:hover,
+.group:hover .group-hover\:bg-white {
+  background-color: #172033 !important;
+}
+
+.text-zinc-600,
+.text-zinc-500,
+.text-zinc-400 {
+  color: #a5b4c8 !important;
+}
+
+.border-black\/10,
+.border-black\/8,
+.border-black\/7,
+.border-black\/20,
+.border-black\/15 {
+  border-color: rgb(148 163 184 / 0.2) !important;
+}
+
+.bg-zinc-50 {
+  background-color: #172033 !important;
+}
+
+.text-amber-900,
+.text-red-700 {
+  color: #bfdbfe !important;
 }
 
 .technology-marquee:hover .technology-track {
