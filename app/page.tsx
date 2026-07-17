@@ -347,8 +347,8 @@ export default function Home() {
             sizes="(min-width: 1024px) 72vw, 100vw"
             className="object-cover object-right opacity-65 lg:opacity-85"
           />
-          <div className="absolute inset-0 bg-[linear-gradient(90deg,#07110f_0%,rgba(7,17,15,0.96)_18%,rgba(7,17,15,0.58)_50%,rgba(7,17,15,0.12)_100%)]" />
-          <div className="absolute inset-0 bg-[linear-gradient(0deg,#07110f_0%,transparent_34%,rgba(7,17,15,0.2)_100%)]" />
+          <div className="absolute inset-0 bg-[linear-gradient(90deg,#02090a_0%,rgba(2,9,10,0.96)_20%,rgba(2,9,10,0.72)_47%,rgba(3,20,33,0.58)_74%,#082239_100%)]" />
+          <div className="absolute inset-0 bg-[linear-gradient(0deg,#02090a_0%,transparent_34%,rgba(2,9,10,0.16)_100%)]" />
         </div>
         <div className="hero-grid absolute inset-0 opacity-35" aria-hidden="true" />
         <div className="hero-glow absolute -right-40 top-0 size-[42rem] rounded-full" aria-hidden="true" />

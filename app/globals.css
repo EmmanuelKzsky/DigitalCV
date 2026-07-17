@@ -51,21 +51,21 @@
 :root {
   --background: #02090a;
   --foreground: #f1fbfc;
-  --card: #071518;
+  --card: #061923;
   --card-foreground: #f1fbfc;
-  --popover: #071518;
+  --popover: #061923;
   --popover-foreground: #f1fbfc;
   --primary: #f1fbfc;
   --primary-foreground: #02090a;
-  --secondary: #0b2024;
+  --secondary: #0a2431;
   --secondary-foreground: #f1fbfc;
-  --muted: #0b2024;
+  --muted: #0a2431;
   --muted-foreground: #9ab8bd;
   --accent: #004e57;
   --accent-foreground: #a5f3fc;
   --destructive: oklch(0.577 0.245 27.325);
-  --border: rgb(34 211 238 / 0.22);
-  --input: rgb(34 211 238 / 0.22);
+  --border: rgb(56 189 248 / 0.24);
+  --input: rgb(56 189 248 / 0.24);
   --ring: #22d3ee;
   --chart-1: oklch(0.87 0 0);
   --chart-2: oklch(0.556 0 0);
@@ -265,7 +265,7 @@
 }
 
 .bg-\[\#f3f1ea\] {
-  background-color: #02090a !important;
+  background-color: #041523 !important;
 }
 
 .bg-\[\#07110f\],
@@ -284,18 +284,22 @@
 .bg-zinc-50,
 .bg-amber-50,
 .bg-\[\#f7f7f3\] {
-  background-color: #071518 !important;
+  background-color: #061923 !important;
 }
 
 .hover\:bg-white:hover,
 .group:hover .group-hover\:bg-white {
-  background-color: #0b2024 !important;
+  background-color: #0a2431 !important;
 }
 
 .text-zinc-600,
 .text-zinc-500,
 .text-zinc-400 {
-  color: #9ab8bd !important;
+  color: #b8d6dc !important;
+}
+
+.text-zinc-800 {
+  color: #d8eef2 !important;
 }
 
 .border-black\/10,
@@ -303,11 +307,11 @@
 .border-black\/7,
 .border-black\/20,
 .border-black\/15 {
-  border-color: rgb(148 163 184 / 0.2) !important;
+  border-color: rgb(56 189 248 / 0.24) !important;
 }
 
 .bg-zinc-50 {
-  background-color: #0b2024 !important;
+  background-color: #0a2431 !important;
 }
 
 .text-amber-900,
