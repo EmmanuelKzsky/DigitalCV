@@ -13,7 +13,7 @@ import {
   ShieldCheck,
   Sparkles,
 } from "lucide-react";
-import { FaAws, FaJava, FaUsersCog } from "react-icons/fa";
+import { FaAws, FaGithub, FaJava, FaUsersCog } from "react-icons/fa";
 import {
   SiAngular,
   SiAnthropic,
@@ -319,6 +319,9 @@ export default function Home() {
             <Button nativeButton={false} render={<a href="#expertise" />} variant="ghost" size="sm" className="hidden text-zinc-300 hover:bg-white/10 hover:text-white sm:inline-flex">
               Expertise
             </Button>
+            <Button nativeButton={false} render={<a href="/export" />} variant="ghost" size="sm" className="hidden text-zinc-300 hover:bg-white/10 hover:text-white sm:inline-flex">
+              Export this
+            </Button>
             <Button nativeButton={false} render={<a href="mailto:Emmanuel.castro.pantoja@gmail.com" />} size="sm" className="rounded-full bg-emerald-400 px-4 text-[#07110f] hover:bg-emerald-300">
               Let&apos;s talk <ArrowUpRight className="size-4" />
             </Button>
@@ -359,8 +362,8 @@ export default function Home() {
               <Button nativeButton={false} render={<a href="#experience" />} size="lg" className="rounded-full bg-emerald-400 px-6 text-[#07110f] hover:bg-emerald-300">
                 Explore my work <ArrowDown className="size-4" />
               </Button>
-              <Button nativeButton={false} render={<a href="/emmanuel-castro-resume.pdf" download />} size="lg" variant="outline" className="rounded-full border-white/15 bg-white/5 px-6 text-white hover:bg-white/10 hover:text-white">
-                <Download className="size-4" /> Download résumé
+              <Button nativeButton={false} render={<a href="/export" />} size="lg" variant="outline" className="rounded-full border-white/15 bg-white/5 px-6 text-white hover:bg-white/10 hover:text-white">
+                <Download className="size-4" /> Export résumé
               </Button>
             </div>
           </div>
@@ -552,6 +555,19 @@ export default function Home() {
             </a>
             <span className="flex items-center gap-2"><MapPin className="size-4" /> Guadalajara, Jalisco, México</span>
           </div>
+        </div>
+      </section>
+
+      <section className="bg-white px-5 py-16 sm:px-8">
+        <div className="mx-auto flex max-w-7xl flex-col gap-6 rounded-3xl border border-black/10 bg-[#f3f1ea] p-7 sm:flex-row sm:items-center sm:justify-between sm:p-10">
+          <div>
+            <p className="section-kicker">Open source</p>
+            <h2 className="mt-3 text-3xl font-semibold tracking-tight text-[#0a1714]">Do you want to use this project for your CV?</h2>
+            <p className="mt-2 max-w-2xl text-zinc-600">Fork the codebase, make it your own and export your own résumé from the portfolio.</p>
+          </div>
+          <Button nativeButton={false} render={<a href="https://github.com/EmmanuelKzsky/DigitalCV" target="_blank" rel="noreferrer" />} size="lg" className="shrink-0 rounded-full bg-[#0a1714] px-6 text-white hover:bg-[#17342c]">
+            <FaGithub className="size-5" /> Use on GitHub <ArrowUpRight className="size-4" />
+          </Button>
         </div>
       </section>
 
