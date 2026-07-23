@@ -10,7 +10,7 @@ The assistant uses the Gemini API free tier through a server-side key. Create a 
 GEMINI_API_KEY=...
 ```
 
-The current retrieval boundary is `retrievePortfolioKnowledge()`. When new sources are added, replace that adapter with Mastra's vector retrieval (`@mastra/rag`) and a persistent `pgvector` store. The agent, `/api/chat` route, and UI remain unchanged.
+The current retrieval boundary is `retrievePortfolioKnowledge()`: it retrieves relevant CV passages before Mastra generates the answer (two-step RAG). When new sources are added, replace that adapter with Mastra's vector retrieval (`@mastra/rag`) and a persistent `pgvector` store. The agent, `/api/chat` route, and UI remain unchanged.
 
 ## Development
 

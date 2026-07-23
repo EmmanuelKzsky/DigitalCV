@@ -1,5 +1,6 @@
 import { z } from "zod";
 
+import { retrievePortfolioKnowledge } from "@/lib/knowledge/cv-resource";
 import { createPortfolioAgent } from "@/lib/mastra/portfolio-agent";
 
 export const runtime = "nodejs";
@@ -22,11 +23,13 @@ export async function POST(request: Request) {
   }
 
   try {
-    const agent = createPortfolioAgent();
-    const result = await agent.generate(parsed.data.message, { maxSteps: 3 });
+    const sources = retrievePortfolioKnowledge(parsed.data.message);
+    const context = sources.map((source) => `[${source.title}]\n${source.content}`).join("\n\n");
+    const agent = createPortfolioAgent(context);
+    const result = await agent.generate(parsed.data.message);
     return Response.json({
       answer: result.text,
-      sources: ["CV"],
+      sources: [...new Set(sources.map((source) => source.source))],
     });
   } catch (error) {
     console.error("Portfolio assistant failed", error);
