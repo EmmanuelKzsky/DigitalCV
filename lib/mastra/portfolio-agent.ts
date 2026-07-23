@@ -35,7 +35,7 @@ export function createPortfolioAgent() {
     ].join(" "),
     // Mastra owns the agent and retrieval contract, so future sources can add
     // a vector store without replacing this chat integration.
-    model: google("gemini-2.5-flash"),
+    model: google("gemini-3-flash-preview"),
     tools: { portfolioKnowledge: portfolioKnowledgeTool },
   });
 }
