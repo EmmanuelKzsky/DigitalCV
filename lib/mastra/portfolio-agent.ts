@@ -1,5 +1,6 @@
 import { Agent } from "@mastra/core/agent";
 import { createTool } from "@mastra/core/tools";
+import { createGoogleGenerativeAI } from "@ai-sdk/google";
 import { z } from "zod";
 
 import { retrievePortfolioKnowledge } from "@/lib/knowledge/cv-resource";
@@ -17,11 +18,10 @@ const portfolioKnowledgeTool = createTool({
     })),
 });
 
-export function createPortfolioAgent(oidcToken?: string | null) {
-  // Vercel sends the short-lived OIDC token to functions in a request header.
-  // AI_GATEWAY_API_KEY remains an optional local/non-Vercel fallback.
-  const apiKey = process.env.AI_GATEWAY_API_KEY || oidcToken || process.env.VERCEL_OIDC_TOKEN;
-  if (!apiKey) throw new Error("AI Gateway is not configured");
+export function createPortfolioAgent() {
+  const apiKey = process.env.GEMINI_API_KEY;
+  if (!apiKey) throw new Error("Gemini API is not configured");
+  const google = createGoogleGenerativeAI({ apiKey });
 
   return new Agent({
     id: "portfolio-assistant",
@@ -33,14 +33,9 @@ export function createPortfolioAgent(oidcToken?: string | null) {
       "If the source does not answer the question, say so plainly and invite the visitor to contact Emmanuel.",
       "Be concise, professional, and answer in the user's language.",
     ].join(" "),
-    // The Vercel AI Gateway exposes an OpenAI-compatible endpoint. Mastra owns
-    // the agent and retrieval contract, so future sources can add a vector
-    // store without replacing this chat integration.
-    model: {
-      id: "google/gemini-2.5-flash",
-      url: "https://ai-gateway.vercel.sh/v1",
-      apiKey,
-    },
+    // Mastra owns the agent and retrieval contract, so future sources can add
+    // a vector store without replacing this chat integration.
+    model: google("gemini-2.5-flash"),
     tools: { portfolioKnowledge: portfolioKnowledgeTool },
   });
 }

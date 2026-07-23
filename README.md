@@ -4,10 +4,10 @@
 
 The floating assistant is built on **Mastra**. Its first approved RAG resource is a reviewed, structured representation of the CV in `lib/knowledge/cv-resource.ts`; the original PDF is intentionally not committed.
 
-On Vercel, the assistant uses the short-lived OIDC token supplied to the function request. Enable **Secure Backend Access with OIDC Federation** in Project Settings -> Security; no project secret or payment method is required for production. For local development or non-Vercel hosting, add:
+The assistant uses the Gemini API free tier through a server-side key. Create a restricted Gemini API key in Google AI Studio, then add it as `GEMINI_API_KEY` in Vercel for Production and in `.env.local` for local development. The key is never sent to the browser or committed to Git.
 
 ```bash
-AI_GATEWAY_API_KEY=...
+GEMINI_API_KEY=...
 ```
 
 The current retrieval boundary is `retrievePortfolioKnowledge()`. When new sources are added, replace that adapter with Mastra's vector retrieval (`@mastra/rag`) and a persistent `pgvector` store. The agent, `/api/chat` route, and UI remain unchanged.
