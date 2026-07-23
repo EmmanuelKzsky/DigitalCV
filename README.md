@@ -4,7 +4,7 @@
 
 The floating assistant is built on **Mastra**. Its first approved RAG resource is a reviewed, structured representation of the CV in `lib/knowledge/cv-resource.ts`; the original PDF is intentionally not committed.
 
-On Vercel, the assistant uses the automatically injected `VERCEL_OIDC_TOKEN` to authenticate with AI Gateway. No project secret is required for production. For local development or non-Vercel hosting, add:
+On Vercel, the assistant uses the short-lived OIDC token supplied to the function request. Enable **Secure Backend Access with OIDC Federation** in Project Settings -> Security; no project secret or payment method is required for production. For local development or non-Vercel hosting, add:
 
 ```bash
 AI_GATEWAY_API_KEY=...

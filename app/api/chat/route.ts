@@ -9,7 +9,8 @@ const chatRequest = z.object({
 });
 
 export async function POST(request: Request) {
-  if (!process.env.AI_GATEWAY_API_KEY && !process.env.VERCEL_OIDC_TOKEN) {
+  const oidcToken = request.headers.get("x-vercel-oidc-token");
+  if (!process.env.AI_GATEWAY_API_KEY && !oidcToken && !process.env.VERCEL_OIDC_TOKEN) {
     return Response.json(
       { error: "The portfolio assistant is being configured. Please try again soon." },
       { status: 503 },
@@ -22,7 +23,7 @@ export async function POST(request: Request) {
   }
 
   try {
-    const agent = createPortfolioAgent();
+    const agent = createPortfolioAgent(oidcToken);
     const result = await agent.generate(parsed.data.message, { maxSteps: 3 });
     return Response.json({
       answer: result.text,
