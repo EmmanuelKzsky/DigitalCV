@@ -9,7 +9,10 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@ai-sdk/openai": "^4.0.19",
     "@base-ui/react": "^1.6.0",
+    "@mastra/core": "^1.52.1",
+    "@mastra/rag": "^2.4.2",
     "ai": "^7.0.31",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",

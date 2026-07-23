@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { GitHubProjectLink } from "@/components/github-project-link";
 import { InternalNavigation } from "@/components/internal-navigation";
+import { PortfolioChat } from "@/components/portfolio-chat";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -52,7 +53,7 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} dark h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col"><InternalNavigation />{children}<GitHubProjectLink /></body>
+      <body className="min-h-full flex flex-col"><InternalNavigation />{children}<PortfolioChat /><GitHubProjectLink /></body>
     </html>
   );
 }

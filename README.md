@@ -1,4 +1,18 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Emmanuel Castro - Digital CV
+
+## Portfolio assistant
+
+The floating assistant is built on **Mastra**. Its first approved RAG resource is a reviewed, structured representation of the CV in `lib/knowledge/cv-resource.ts`; the original PDF is intentionally not committed.
+
+Set this environment variable in Vercel before enabling live answers:
+
+```bash
+AI_GATEWAY_API_KEY=...
+```
+
+The current retrieval boundary is `retrievePortfolioKnowledge()`. When new sources are added, replace that adapter with Mastra's vector retrieval (`@mastra/rag`) and a persistent `pgvector` store. The agent, `/api/chat` route, and UI remain unchanged.
+
+## Development
 
 ## Getting Started
 
