@@ -2,6 +2,8 @@
 
 import { FormEvent, useRef, useState } from "react";
 import { Bot, Send, Sparkles, X } from "lucide-react";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 type Message = { role: "assistant" | "user"; text: string };
 
@@ -60,7 +62,26 @@ export function PortfolioChat() {
           </header>
 
           <div className="flex-1 space-y-3 overflow-y-auto px-4 py-4" aria-live="polite">
-            {messages.map((message, index) => <div key={`${message.role}-${index}`} className={message.role === "user" ? "ml-8 rounded-2xl rounded-br-sm bg-cyan-400 px-3 py-2 text-sm leading-6 text-background" : "mr-5 rounded-2xl rounded-bl-sm border border-cyan-400/15 bg-black/20 px-3 py-2 text-sm leading-6 text-cyan-50/90"}>{message.text}</div>)}
+            {messages.map((message, index) => (
+              <div key={`${message.role}-${index}`} className={message.role === "user" ? "ml-8 rounded-2xl rounded-br-sm bg-cyan-400 px-3 py-2 text-sm leading-6 text-background" : "mr-5 rounded-2xl rounded-bl-sm border border-cyan-400/15 bg-black/20 px-3 py-2 text-sm leading-6 text-cyan-50/90"}>
+                {message.role === "user" ? message.text : (
+                  <ReactMarkdown
+                    remarkPlugins={[remarkGfm]}
+                    components={{
+                      p: ({ children }) => <p className="mb-2 last:mb-0">{children}</p>,
+                      strong: ({ children }) => <strong className="font-semibold text-white">{children}</strong>,
+                      ul: ({ children }) => <ul className="my-2 list-disc space-y-1 pl-5 marker:text-cyan-300">{children}</ul>,
+                      ol: ({ children }) => <ol className="my-2 list-decimal space-y-1 pl-5 marker:text-cyan-300">{children}</ol>,
+                      li: ({ children }) => <li>{children}</li>,
+                      a: ({ children, href }) => <a href={href} target="_blank" rel="noreferrer" className="font-medium text-cyan-300 underline decoration-cyan-300/50 underline-offset-2 hover:text-cyan-100">{children}</a>,
+                      code: ({ children }) => <code className="rounded bg-cyan-400/10 px-1 py-0.5 font-mono text-[0.8em] text-cyan-100">{children}</code>,
+                    }}
+                  >
+                    {message.text}
+                  </ReactMarkdown>
+                )}
+              </div>
+            ))}
             {isSending && <div className="mr-5 w-fit rounded-2xl rounded-bl-sm border border-cyan-400/15 bg-black/20 px-3 py-2 text-sm text-cyan-100/70">Searching the portfolio knowledge base...</div>}
             {error && <p className="rounded-lg border border-red-400/25 bg-red-400/10 px-3 py-2 text-xs leading-5 text-red-100">{error}</p>}
           </div>
