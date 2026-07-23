@@ -18,7 +18,9 @@ const portfolioKnowledgeTool = createTool({
 });
 
 export function createPortfolioAgent() {
-  const apiKey = process.env.AI_GATEWAY_API_KEY;
+  // Vercel automatically provides VERCEL_OIDC_TOKEN to deployed functions.
+  // AI_GATEWAY_API_KEY is only needed for local development or non-Vercel hosts.
+  const apiKey = process.env.AI_GATEWAY_API_KEY || process.env.VERCEL_OIDC_TOKEN;
   if (!apiKey) throw new Error("AI Gateway is not configured");
 
   return new Agent({

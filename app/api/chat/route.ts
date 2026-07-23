@@ -9,7 +9,7 @@ const chatRequest = z.object({
 });
 
 export async function POST(request: Request) {
-  if (!process.env.AI_GATEWAY_API_KEY) {
+  if (!process.env.AI_GATEWAY_API_KEY && !process.env.VERCEL_OIDC_TOKEN) {
     return Response.json(
       { error: "The portfolio assistant is being configured. Please try again soon." },
       { status: 503 },
